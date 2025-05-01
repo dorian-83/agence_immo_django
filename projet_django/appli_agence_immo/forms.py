@@ -12,12 +12,12 @@ class VendeursForm(ModelForm):
         model = Vendeurs
         fields = "__all__"
 
-class AgentForm(ModelForm):
+class AgentsForm(ModelForm):
     class Meta:
         model = Agent_immo
         fields = "__all__"
 
-class BienForm(ModelForm):
+class BiensForm(ModelForm):
     class Meta:
         model = Bien_Immobiliers
         fields = "__all__"

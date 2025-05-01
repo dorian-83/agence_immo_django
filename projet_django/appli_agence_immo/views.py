@@ -30,3 +30,23 @@ def ajouter_vendeur(request):
     else:
         form = VendeursForm()
     return render(request, 'ajouter_vendeur.html', {'form': form})
+
+def ajouter_agent(request):
+    if request.method == 'POST':
+        form = AgentsForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('main')  # redirige vers une autre vue ou page
+    else:
+        form = AgentsForm()
+    return render(request, 'ajouter_agent.html', {'form': form})
+
+def ajouter_bien(request):
+    if request.method == 'POST':
+        form = BiensForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('main')  # redirige vers une autre vue ou page
+    else:
+        form = BiensForm()
+    return render(request, 'ajouter_bien.html', {'form': form})     

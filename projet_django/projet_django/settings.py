@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'appli_agence_immo.apps.AppliAgenceImmoConfig',
+    'appli_gestion_acheteurs.apps.AppliGestionAcheteursConfig',
+    'appli_gestion_vendeurs.apps.AppliGestionVendeursConfig',
+    'appli_gestion_agents.apps.AppliGestionAgentsConfig',
 ]
 
 MIDDLEWARE = [
