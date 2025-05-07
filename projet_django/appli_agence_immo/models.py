@@ -13,11 +13,11 @@ class Acheteurs(models.Model):
 class Bien_Immobiliers(models.Model):
     id_bien=models.IntegerField(primary_key=True)
     ville=models.CharField(max_length=30)
-    code_postal=models.IntegerField()
     surface=models.DecimalField(max_digits=6, decimal_places=2)
     nb_chambres=models.IntegerField()
     garage=models.BooleanField()
     etat=models.CharField(max_length=10)
+    estimation=models.IntegerField(default=0)
 
 class Vendeurs(models.Model):
     id_vendeur=models.IntegerField(primary_key=True)

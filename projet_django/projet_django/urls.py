@@ -21,5 +21,5 @@ from appli_agence_immo import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('appli_agence_immo/', include('appli_agence_immo.urls')),
-    path('', views.main, name='main'),
+    path('appli_gestion_vendeurs/', include('appli_gestion_vendeurs.urls')),
 ]
