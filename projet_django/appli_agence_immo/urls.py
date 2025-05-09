@@ -9,6 +9,7 @@ urlpatterns = [
     path('ajouter_agent', views.ajouter_agent, name='ajouter_agent'),
     path('ajouter_bien', views.ajouter_bien, name='ajouter_bien'),
     path('ajouter_bien', views.ajouter_bien, name='ajouter_bien'),
+    path('ajouter_rdv', views.ajouter_rdv, name='ajouter_rdv'),
     path('appli_gestion_vendeurs/', include('appli_gestion_vendeurs.urls')),
 ]
 

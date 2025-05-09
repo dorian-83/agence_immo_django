@@ -6,4 +6,5 @@ app_name = 'appli_gestion_vendeurs'
 urlpatterns = [
     path('main_vendeurs', views.main_vendeurs, name='main_vendeurs'),
     path('etat_bien', views.etat_bien, name='etat_bien'),
+    path('list_rdv', views.list_rdv, name='list_rdv'),
 ]

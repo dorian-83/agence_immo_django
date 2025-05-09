@@ -49,4 +49,14 @@ def ajouter_bien(request):
             return redirect('main')  # redirige vers une autre vue ou page
     else:
         form = BiensForm()
-    return render(request, 'ajouter_bien.html', {'form': form})     
+    return render(request, 'ajouter_bien.html', {'form': form})
+
+def ajouter_rdv(request):
+    if request.method == 'POST':
+        form = RdvForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('main')  # redirige vers une autre vue ou page
+    else:
+        form = RdvForm()
+    return render(request, 'ajouter_rdv.html', {'form': form})      

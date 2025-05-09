@@ -1,0 +1,11 @@
+<p><a href="{% url 'main' %}"> Accueil </a></p>
+
+<h2>Ajouter un rendez-vous</h2>
+
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Enregistrer</button>
+</form>
+

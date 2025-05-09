@@ -21,3 +21,8 @@ class BiensForm(ModelForm):
     class Meta:
         model = Bien_Immobiliers
         fields = "__all__"
+
+class RdvForm(ModelForm):
+    class Meta:
+        model = Rendez_Vous
+        fields = "__all__"
