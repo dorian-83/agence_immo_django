@@ -11,6 +11,7 @@ urlpatterns = [
     path('ajouter_bien', views.ajouter_bien, name='ajouter_bien'),
     path('ajouter_rdv', views.ajouter_rdv, name='ajouter_rdv'),
     path('appli_gestion_vendeurs/', include('appli_gestion_vendeurs.urls')),
+    path('appli_gestion_acheteurs/', include('appli_gestion_acheteurs.urls')),
 ]
 
 
