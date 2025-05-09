@@ -59,4 +59,14 @@ def ajouter_rdv(request):
             return redirect('main')  # redirige vers une autre vue ou page
     else:
         form = RdvForm()
-    return render(request, 'ajouter_rdv.html', {'form': form})      
+    return render(request, 'ajouter_rdv.html', {'form': form})
+
+def ajouter_fait(request):
+    if request.method == 'POST':
+        form = AchatForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('main')  # redirige vers une autre vue ou page
+    else:
+        form = AchatForm()
+    return render(request, 'ajouter_fait.html', {'form': form})        

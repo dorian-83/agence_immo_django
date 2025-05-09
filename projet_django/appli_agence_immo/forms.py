@@ -26,3 +26,8 @@ class RdvForm(ModelForm):
     class Meta:
         model = Rendez_Vous
         fields = "__all__"
+
+class AchatForm(ModelForm):
+    class Meta:
+        model = Achat
+        fields = "__all__"
