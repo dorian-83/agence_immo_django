@@ -1,0 +1,87 @@
+<!-- fichier pages.tmpl --> 
+<html>
+<head> 
+  <p><a href="{% url 'main' %}"> Accueil </a></p>
+
+  <title>Critères des acheteurs</title>
+  <style>   
+    table.mon_tableau  {
+        border-collapse: collapse;
+    }
+    table.mon_tableau td {
+       border: 1px solid #5555;
+       padding: 0.3em;
+       font-family: "Sans-serif";
+       font-size: 12px;
+    }
+    table.mon_tableau tr:nth-child(even)  {background: #EEE}
+    table.mon_tableau tr:nth-child(odd) {background: #FFF}
+  </style>
+</head>
+
+<body> 
+{% if rien %}
+  Aucune entrée dans la table Acheteurs
+{% else %}
+  
+  {% for p in pages %}
+  <h2>Critères de {{ p.nom }} </h2>
+<table class="mon_tableau">
+    <tr>
+      <th>Nom</th>
+      <th>Superficie</th>
+      <th>Nombre de chambres</th>
+      <th>Garage</th>
+      <th>Ville</th>
+    </tr>  
+    <tr>
+      <td>{{ p.nom }} </td>
+      <td>{{ p.superficie }} </td>
+      <td>{{ p.nbr_chambre }} </td>
+      <td>
+        {% if p.garage %}
+        Oui
+      {% else %}
+        Non
+      {% endif %}
+      </td>
+      <td>{{ p.ville }} </td>
+    </tr>
+  </table>
+
+<p>Liste des biens pouvant correspondre à {{p.nom}} </p>
+
+  {% for b in biens %}
+{% if b.surface == p.superficie and b.ville == p.ville and b.garage == p.garage or b.surface == p.superficie and b.ville == p.ville and b.nb_chambres == p.nbr_chambre %}
+
+<table class="mon_tableau">
+    <tr>
+      <th>id_bien</th>
+      <th>Superficie</th>
+      <th>Nombre de chambres</th>
+      <th>Garage</th>
+      <th>Ville</th>
+    </tr>  
+    <tr>
+      <td>{{ b.id_bien }} </td>
+      <td>{{ b.surface }} </td>
+      <td>{{ b.nb_chambres }} </td>
+      <td>
+        {% if b.garage %}
+        Oui
+      {% else %}
+        Non
+      {% endif %}
+      </td>
+      <td>{{ b.ville }} </td>
+    </tr>
+  </table>  
+{% endif %}
+
+  {% endfor %}
+
+
+  {% endfor %}
+{% endif %}
+</body>
+</html>

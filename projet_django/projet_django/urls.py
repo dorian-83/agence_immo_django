@@ -25,3 +25,4 @@ urlpatterns = [
     path('appli_gestion_vendeurs/', include('appli_gestion_vendeurs.urls')),
     path('appli_gestion_acheteurs/', include('appli_gestion_acheteurs.urls')),
 ]
+ 

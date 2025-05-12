@@ -4,12 +4,18 @@ from django.db import models
 
 
 class Acheteurs(models.Model):
-    nom=models.CharField(max_length=30)
-    id_acheteur=models.IntegerField(primary_key=True)
+    nom=models.CharField(max_length=30,unique=True)
+    id_acheteur=models.IntegerField(primary_key=True,unique=True)
     superficie=models.DecimalField(max_digits=6, decimal_places=2)
     nbr_chambre=models.IntegerField()
     garage=models.BooleanField()
     ville=models.CharField(max_length=30)
+
+    class MetaAcheteurs:
+        constraints = [
+            models.UniqueConstraint(fields=['nom', 'id_acheteur'], name='ma_cle_unique')
+        ]
+
 
 class Bien_Immobiliers(models.Model):
     id_bien=models.IntegerField(primary_key=True)
