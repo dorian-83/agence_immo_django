@@ -28,7 +28,8 @@ class Vendeurs(models.Model):
 
 class Agent_immo(models.Model):
     id_agent=models.IntegerField(primary_key=True)
-    id_bien=models.IntegerField()
+    nom=models.CharField(max_length=20)
+
 
 class Achat(models.Model):
     id_bien=models.ForeignKey(Bien_Immobiliers,on_delete=models.CASCADE)

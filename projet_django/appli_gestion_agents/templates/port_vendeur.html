@@ -1,0 +1,58 @@
+<html>
+<head> 
+  <p><a href="{% url 'main' %}"> Accueil </a></p>
+
+  <title>Portefeuille vendeur</title>
+  <style>   
+    table.mon_tableau  {
+        border-collapse: collapse;
+    }
+    table.mon_tableau td {
+       border: 1px solid #5555;
+       padding: 0.3em;
+       font-family: "Sans-serif";
+       font-size: 12px;
+    }
+    table.mon_tableau tr:nth-child(even)  {background: #EEE}
+    table.mon_tableau tr:nth-child(odd) {background: #FFF}
+  </style>
+</head>
+
+
+<body>
+
+{% if rien %}
+
+  Aucune entrée dans la table de fait Achat
+
+{% else %}
+
+<table class="mon_tableau">
+
+ <tr>
+    <th>référence du bien</th>
+    <th>vendeur</th>
+    <th>ville</th>
+    <th>estimation</th>
+    <th>état</th>
+
+</tr> 
+
+  {% for t in table %}
+ 
+    <tr>
+      <td>{{ t.id_bien }} </td>
+      <td>{{ t.id_vendeur.nom }} </td>
+      <td>{{ t.id_bien.ville }} </td>
+      <td>{{ t.id_bien.estimation }} </td>
+      <td>{{ t.id_bien.etat }} </td>
+    </tr>
+
+  {% endfor %}
+  </table>  
+
+
+  {% endif %}
+
+</body>
+</html>
